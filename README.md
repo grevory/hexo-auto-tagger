@@ -1,7 +1,7 @@
 # hexo-auto-tagger
 Automatically add tags to a post in a Hexo blog by checking the post for predefined keywords
 
-[![Build Status](https://travis-ci.org/grevory/hexo-auto-tagger.svg?branch=master)](https://travis-ci.org/grevory/hexo-auto-tagger)  [![NPM version](https://badge.fury.io/js/hexo-auto-tagger.svg)](http://badge.fury.io/js/hexo-auto-tagger) [![Coverage Status](https://img.shields.io/coveralls/grevory/hexo-auto-tagger.svg)](https://coveralls.io/r/grevory/hexo-auto-tagger?branch=master)
+[![Build Status](https://travis-ci.org/grevory/hexo-auto-tagger.svg?branch=master)](https://travis-ci.org/grevory/hexo-auto-tagger)  [![NPM version](https://badge.fury.io/js/hexo-auto-tagger.svg)](http://badge.fury.io/js/hexo-auto-tagger) [![Coverage Status](https://coveralls.io/repos/github/grevory/hexo-auto-tagger/badge.svg?branch=master)](https://coveralls.io/github/grevory/hexo-auto-tagger?branch=master)
 
 Tag generator for [Hexo].
 

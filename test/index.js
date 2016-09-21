@@ -6,12 +6,12 @@ var Hexo = require('hexo');
 describe('Tag generator', function() {
   var hexo = new Hexo(__dirname, {silent: true});
   var Post = hexo.model('Post');
-  var generator = require('../lib/auto-tagger').bind(hexo);
   var posts;
-  var locals;
+  // var autoTagger = require('../lib/auto-tagger').bind(hexo);
+  // var locals;
 
   // Default config
-  hexo.config.auto_tagger = ['Keyword'];
+  hexo.config.auto_tagger = ['Tag Keyword'];
 
   before(function() {
     return Post.insert([
@@ -30,7 +30,7 @@ describe('Tag generator', function() {
         return posts[3].setTags(['foo']);
       });
     }).then(function() {
-      locals = hexo.locals.toObject();
+      // locals = hexo.locals.toObject();
     });
   });
 });
