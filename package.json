@@ -1,0 +1,35 @@
+{
+  "name": "hexo-auto-tagger",
+  "description": "Automatically adds tags to posts if the post contains any predefined key tag word or phrases.",
+  "version": "0.0.1",
+  "main": "index",
+  "scripts": {
+    "eslint": "eslint .",
+    "jscs": "jscs .",
+    "lint": "jscs . && eslint .",
+    "test": "mocha test/index.js",
+    "test-cov": "istanbul cover --print both _mocha -- test/index.js"
+  },
+  "directories": {
+    "lib": "./lib"
+  },
+  "repository": "hexojs/hexo-generator-tag",
+  "keywords": [
+    "hexo",
+    "tag",
+    "posts",
+    "auto-tagger"
+  ],
+  "author": "Gregory Pike",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "hexo": "^3.1.1",
+    "mocha": "^2.4.5",
+    "istanbul": "^0.4.2",
+    "eslint": "^1.10.3",
+    "jscs": "^2.9.0",
+    "eslint-config-hexo": "^1.0.2",
+    "jscs-preset-hexo": "^1.0.1"
+  }
+}
