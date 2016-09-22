@@ -31,6 +31,13 @@ auto_tagger:
 
 **tag_keywords**: An array of keywords to search for in each post
 
+## Deploying Contributions
+``` bash
+$ git commit -am "Your commit message"
+$ npm version patch|minor|major
+$ git push origin master --tags
+```
+
 ## License
 
 MIT
