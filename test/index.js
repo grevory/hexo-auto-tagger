@@ -9,7 +9,7 @@ describe('Auto Tagger', function() {
   var Post = hexo.model('Post');
   var autoTagger = require('../lib/auto-tagger').bind(hexo);
   var locals;
-  var posts;
+  // var posts;
 
   // Default config
   hexo.config.auto_tagger = {
@@ -48,18 +48,18 @@ describe('Auto Tagger', function() {
         source: 'mixed-case',
         slug: 'mixed-case',
         content: 'Lorem ipsum newfoundland & labrador dolor sit amet, onTario consectetur adipiscing elit. -TARGET'
-      },
-      {
-        source: 'existing-tags',
-        slug: 'existing-tags',
-        content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Newfoundland & Labrador',
-        tags: ['Nova Scotia']
-      }
+      }//,
+      // {
+      //   source: 'existing-tags',
+      //   slug: 'existing-tags',
+      //   content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Newfoundland & Labrador',
+      //   tags: { data: ['Nova Scotia'] }
+      // }
     ])
     // .then(function(data) {
     //   posts = data;
 
-    //   // One test needs existing tags
+    // //   // One test needs existing tags
     //   return posts[0].setTags([])
     //     .then(function(){
     //       return posts[1].setTags([]);
@@ -113,7 +113,7 @@ describe('Auto Tagger', function() {
     tags.should.eql(['Newfoundland & Labrador']);
   });
 
-  it('adds a single tag again', function(){
+  it('adds a single tag again', function() {
 
     autoTagger(locals);
 
@@ -127,7 +127,7 @@ describe('Auto Tagger', function() {
     tags.should.eql(['Ontario']);
   });
 
-  it('adds a single tag with no space boundary', function(){
+  it('adds a single tag with no space boundary', function() {
 
     autoTagger(locals);
 
@@ -141,7 +141,7 @@ describe('Auto Tagger', function() {
     tags.should.eql(['Target']);
   });
 
-  it('adds multiple tags', function(){
+  it('adds multiple tags', function() {
 
     autoTagger(locals);
 
@@ -155,7 +155,7 @@ describe('Auto Tagger', function() {
     tags.should.eql(['Newfoundland & Labrador', 'Ontario']);
   });
 
-  it('adds tags despite case', function(){
+  it('adds tags despite case', function() {
 
     autoTagger(locals);
 
@@ -169,19 +169,19 @@ describe('Auto Tagger', function() {
     tags.should.eql(['Newfoundland & Labrador', 'Ontario', 'Target']);
   });
 
-//   it('adds tags when there are existing tags', function(){
+  // it('adds tags when there are existing tags', function(){
 
-//     autoTagger(locals);
+  //   autoTagger(locals);
 
-//     var post = locals.posts.data[6];
-//     // post.setTags(['Nova Scotia']);
-//     var tags = post.tags.data;
-// console.log('---TAGS', tags);
-//     // Make sure we have the right post before we validate the tags
-//     post.slug.should.eql('existing-tags');
-//     // Validate the tags for this post
-//     tags.length.should.eql(2);
-//     tags.should.eql(['Nova Scotia', 'Newfoundland & Labrador']);
-//   });
+  //   var post = locals.posts.data[6];
+  //   // post.setTags(['Nova Scotia']);
+  //   var tags = post.tags.data;
+  //   console.log('---TAGS', tags);
+  //   // Make sure we have the right post before we validate the tags
+  //   post.slug.should.eql('existing-tags');
+  //   // Validate the tags for this post
+  //   tags.length.should.eql(2);
+  //   tags.should.eql(['Nova Scotia', 'Newfoundland & Labrador']);
+  // });
 
 });
