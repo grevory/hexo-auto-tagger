@@ -33,6 +33,7 @@ auto_tagger:
 
 ## Deploying Contributions
 ``` bash
+$ npm run prepush
 $ git commit -am "Your commit message"
 $ npm version patch|minor|major
 $ git push origin master --tags

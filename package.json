@@ -8,7 +8,8 @@
     "jscs": "jscs .",
     "lint": "jscs . && eslint .",
     "test": "mocha test/index.js",
-    "test-cov": "istanbul cover --print both _mocha -- test/index.js"
+    "test-cov": "istanbul cover --print both _mocha -- test/index.js",
+    "prepush": "npm run lint && npm run test-cov"
   },
   "directories": {
     "lib": "./lib"

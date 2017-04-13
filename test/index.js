@@ -5,20 +5,13 @@ var Hexo = require('hexo');
 
 describe('Auto Tagger', function() {
 
-  var locals;
-  var posts;
   var hexo;
   var Post;
-  var Tag;
   var autoTagger;
 
-  beforeEach(function(){
+  beforeEach(function() {
     hexo = new Hexo(__dirname, {silent: true});
-
-    
-
     Post = hexo.model('Post');
-    Tag = hexo.model('Tag');
     autoTagger = require('../lib/auto-tagger').bind(hexo);
 
     // Default config
@@ -36,7 +29,7 @@ describe('Auto Tagger', function() {
         slug: 'no-tags',
         content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       }
-    ]).then(function(){
+    ]).then(function() {
 
       var locals = hexo.locals.toObject();
       locals.isTest = true;
@@ -63,7 +56,7 @@ describe('Auto Tagger', function() {
         slug: 'single-tag',
         content: 'Newfoundland & Labrador, lorem ipsum dolor sit amet, consectetur adipiscing elit.'
       }
-    ]).then(function(){
+    ]).then(function() {
 
       var locals = hexo.locals.toObject();
       locals.isTest = true;
@@ -90,7 +83,7 @@ describe('Auto Tagger', function() {
         slug: 'single-tag-mid',
         content: 'Lorem ipsum dolor sit amet, Ontario consectetur adipiscing elit.'
       }
-    ]).then(function(){
+    ]).then(function() {
 
       var locals = hexo.locals.toObject();
       locals.isTest = true;
@@ -117,7 +110,7 @@ describe('Auto Tagger', function() {
         slug: 'single-tag-attached',
         content: 'Lorem ipsum dolor sit amet, retargeting consectetur adipiscing elit.'
       }
-    ]).then(function(){
+    ]).then(function() {
 
       var locals = hexo.locals.toObject();
       locals.isTest = true;
@@ -144,7 +137,7 @@ describe('Auto Tagger', function() {
         slug: 'multiple-tags',
         content: 'Lorem ipsum Newfoundland & Labrador as well as Ontario dolor sit amet, consectetur adipiscing elit.'
       }
-    ]).then(function(){
+    ]).then(function() {
 
       var locals = hexo.locals.toObject();
       locals.isTest = true;
@@ -160,7 +153,7 @@ describe('Auto Tagger', function() {
       tags.length.should.eql(2);
       tags[0].should.eql('Newfoundland & Labrador');
       tags[1].should.eql('Ontario');
-    })
+    });
   });
 
   it('adds tags despite case', function() {
@@ -172,7 +165,7 @@ describe('Auto Tagger', function() {
         slug: 'mixed-case',
         content: 'Lorem ipsum newfoundland & labrador dolor sit amet, onTario consectetur adipiscing elit. -TARGET'
       }
-    ]).then(function(){
+    ]).then(function() {
 
       var locals = hexo.locals.toObject();
       locals.isTest = true;
