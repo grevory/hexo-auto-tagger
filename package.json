@@ -1,7 +1,7 @@
 {
   "name": "hexo-auto-tagger",
   "description": "Automatically adds tags to posts if the post contains any predefined key tag word or phrases.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "main": "index",
   "scripts": {
     "eslint": "eslint .",
